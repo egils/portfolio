@@ -1,2 +1,5 @@
-# Created by .gitignore support plugin (hsz.mobi)
-.idea/
+/bower_components/*
+/.sass-cache/*
+*.DS_Store
+/stylesheets/*
+.idea
