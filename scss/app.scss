@@ -1,2 +1,49 @@
+$row-width: 100%;
+$body-bg: #333333;
+$body-font-color: #ffffff;
+
 @import "settings";
 @import "foundation";
+
+$sidebar-width: 240px;
+$sidebar-small-width: 84px;
+
+.row.full {
+  height: 100%;
+  max-height: 100%;
+}
+
+#sidebar {
+  max-width: $sidebar-width;
+  position: relative;
+  width: $sidebar-width;
+  color: $body-font-color;
+  background: $body-bg;
+  height: 100%;
+  max-height: 100%;
+
+  ul.navigation {
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-50%);
+    top: 50%;
+    :hover {
+      background: #007295;
+    }
+    li {
+      padding: 10px 0;
+    }
+  }
+
+}
+
+@media #{$small-only} {
+  #sidebar {
+    max-width: $sidebar-small-width;
+    width: $sidebar-small-width;
+  }
+
+  color: green;
+}
