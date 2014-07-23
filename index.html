@@ -10,22 +10,50 @@
 <body>
 <div class="row full">
     <div id="sidebar" class="left">
+        <div id="logo" class="text-center">
+            <a href="index.html">
+                <img src="image/logo.png" width="45" height="45"/>
+            </a>
+        </div>
         <ul class="navigation">
-            <li class="item">Home</li>
-            <li class="item">Portfolio</li>
-            <li class="item">About</li>
-            <li class="item">Contact</li>
+            <li class="item  clearfix">
+                <img alt="About" class="left" src="image/about-small.png">
+                <span class="hidden-for-small"><strong>About</strong><br/>Info about me</span>
+            </li>
+            <li class="item clearfix">
+                <img alt="Portfolio" class="left" src="image/portfolio-small.png">
+                <span class="hidden-for-small"><strong>Portfolio</strong><br/>See what I've done</span>
+            </li>
+            <li class="item clearfix">
+                <img alt="Contacts" class="left" src="image/contact-small.png">
+                <span class="hidden-for-small"><strong>Contacts</strong><br/>How to get in touch</span>
+            </li>
         </ul>
     </div>
 
     <div id="content">
-        content
-        content
-        content
-        content
-        content
-        content
+        <section id="home">
+            <div class="row collapse">
+                <div class="small-12 medium-4 columns ">
+                    <img alt="About" data-interchange="[image/about.png, (default)], [image/about-retina.png, (retina)]">
+                    <noscript><img src="image/about.png"></noscript>
+                    <br>
+                    About
+                </div>
 
+                <div class="small-12 medium-4 columns">
+                    <img alt="Portfolio" data-interchange="[image/portfolio.png, (default)], [image/portfolio-retina.png, (retina)]"> <noscript><img src="image/portfolio.png"></noscript>
+                    <br>
+                    Portfolio
+                </div>
+
+                <div class="small-12 medium-4 columns last ">
+                    <img alt="Contacts" data-interchange="[image/contact.png, (default)], [image/contact-retina.png, (retina)]"> <noscript><img src="image/contact.png"></noscript>
+                    <br>
+                    Contacts
+                </div>
+            </div>
+        </section>
     </div>
 
 </div>

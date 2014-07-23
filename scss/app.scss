@@ -1,6 +1,7 @@
 $row-width: 100%;
 $body-bg: #333333;
-$body-font-color: #ffffff;
+$body-font-family: 'ff-enzo-web',sans-serif;
+$body-font-color: #a1a1a1;
 
 @import "settings";
 @import "foundation";
@@ -13,14 +14,66 @@ $sidebar-small-width: 84px;
   max-height: 100%;
 }
 
+#content {
+  background-image: url('../image/Depositphotos_2389611_original.jpg');
+  height: 100%;
+  max-height: 100%;
+  background-origin: padding-box;
+  background-position: center bottom !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: $sidebar-width;
+
+  section {
+    text-align: center;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: 100%;
+
+    &#home {
+      color: #ffffff;
+      div.row {
+        left: 50%;
+        max-width: 1200px !important;
+        position: relative;
+        ransform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+
+        font-size: rem-calc(26);
+        img {
+          padding: 30px 0 10px;
+        }
+      }
+    }
+  }
+}
+
 #sidebar {
   max-width: $sidebar-width;
   position: relative;
   width: $sidebar-width;
-  color: $body-font-color;
+  color: #ffffff;
   background: $body-bg;
   height: 100%;
   max-height: 100%;
+
+  #logo {
+    padding: 45px 0 0;
+  }
 
   ul.navigation {
     width: 100%;
@@ -28,12 +81,29 @@ $sidebar-small-width: 84px;
     padding: 0;
     margin: 0;
     transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     top: 50%;
+
     :hover {
       background: #007295;
     }
-    li {
-      padding: 10px 0;
+
+    li.item {
+      padding: 20px 0;
+      font-size: rem-calc(12);
+      color: $body-font-color;
+
+      strong {
+        font-size: rem-calc(16);
+        color: #fff;
+      }
+
+      img {
+        padding: 5px 25px;
+      }
     }
   }
 
@@ -43,6 +113,10 @@ $sidebar-small-width: 84px;
   #sidebar {
     max-width: $sidebar-small-width;
     width: $sidebar-small-width;
+  }
+
+  #content {
+    left: $sidebar-small-width;
   }
 
   color: green;
