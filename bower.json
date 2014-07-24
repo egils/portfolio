@@ -1,8 +1,11 @@
 {
-  "name": "foundation-compass-app",
-  "version": "0.0.1",
-  "private": "true",
-  "dependencies": {
-    "foundation": "zurb/bower-foundation"
-  }
+    "name": "egils-portfolio",
+    "version": "0.0.1",
+    "private": "true",
+    "dependencies": {
+        "foundation": "zurb/bower-foundation",
+        "angular": "~1.3",
+        "angular-mocks": "~1.3",
+        "angular-ui-router": "~0.2"
+    }
 }

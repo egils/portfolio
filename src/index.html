@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Egils Portfolio</title>
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="row full">
+    <div id="sidebar" class="left">
+        <div id="logo" class="text-center">
+            <a href="index.html">
+                <img src="assets/image/logo.png" width="45" height="45"/>
+            </a>
+        </div>
+        <ul class="navigation">
+            <li class="item  clearfix">
+                <img alt="About" class="left" src="assets/image/about-small.png">
+                <span class="show-for-large-up"><strong>About</strong><br/>Info about me</span>
+            </li>
+            <li class="item clearfix">
+                <img alt="Portfolio" class="left" src="assets/image/portfolio-small.png">
+                <span class="show-for-large-up"><strong>Portfolio</strong><br/>See what I've done</span>
+            </li>
+            <li class="item clearfix">
+                <img alt="Contacts" class="left" src="assets/image/contact-small.png">
+                <span class="show-for-large-up"><strong>Contacts</strong><br/>How to get in touch</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <section id="home">
+            <div class="row collapse">
+                <div class="small-12 medium-4 columns ico-link">
+                    <!--<img alt="About" data-interchange="[assets/image/about.png, (default)], [assets/image/about-retina.png, (retina)]">-->
+                    <img alt="About" src="assets/image/about.png">
+                    <noscript><img src="assets/image/about.png"></noscript>
+                    <br>
+                    About
+                </div>
+
+                <div class="small-12 medium-4 columns ico-link">
+                    <!--<img alt="Portfolio" data-interchange="[assets/image/portfolio.png, (default)], [assets/image/portfolio-retina.png, (retina)]"> <noscript><img src="assets/image/portfolio.png"></noscript>-->
+
+                    <img alt="Portfolio" src="assets/image/portfolio.png">
+                    <noscript><img src="assets/image/portfolio.png"></noscript>
+                    <br>
+                    Portfolio
+                </div>
+
+                <div class="small-12 medium-4 columns last ico-link">
+                    <!--<img alt="Contacts" data-interchange="[assets/image/contact.png, (default)], [assets/image/contact-retina.png, (retina)]"> <noscript><img src="assets/image/contact.png"></noscript>-->
+                    <img alt="Contacts" src="assets/image/contact.png"> <noscript><img src="assets/image/contact.png"></noscript>
+                    <br>
+                    Contacts
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+</body>
+</html>

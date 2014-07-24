@@ -26,16 +26,11 @@ $font-secondary-color: #ffffff;
   right: 0;
   top: 0;
   left: $sidebar-small-width;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   section {
     text-align: center;
-    transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    top: 50%;
-    position: absolute;
     width: 100%;
 
     &#home {
@@ -104,7 +99,7 @@ $font-secondary-color: #ffffff;
     top: 50%;
 
     li.item {
-      padding: rem-calc(5) 0;
+      padding: rem-calc(10) 0;
       font-size: rem-calc(12);
       color: $body-font-color;
 
@@ -120,7 +115,7 @@ $font-secondary-color: #ffffff;
       }
 
       img {
-        padding: rem-calc(5) rem-calc(25);
+        padding: rem-calc(10) rem-calc(25);
         -webkit-transition: -webkit-transform 0.5s ease-in-out;
         -moz-transition: -moz-transform 0.5s ease-in-out;
         -o-transition: -o-transform 0.5s ease-in-out;
@@ -140,6 +135,18 @@ $font-secondary-color: #ffffff;
 
 }
 
+@media #{$medium-up} {
+  section#home {
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+  }
+}
+
 @media #{$large-up} {
   #sidebar {
     max-width: $sidebar-width;
@@ -147,7 +154,7 @@ $font-secondary-color: #ffffff;
 
     ul.navigation {
       li.item {
-        padding: rem-calc(5) 0;
+        padding: rem-calc(10) 0;
         font-size: rem-calc(12);
         color: $body-font-color;
       }
