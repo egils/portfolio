@@ -1,47 +1,34 @@
 <!doctype html>
-<html class="no-js" lang="en" ng-app="egils.portfolio" ng-controller="AppController">
+<html class="no-js" lang="en" data-ng-app="egils.portfolio" ng-controller="AppController">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title ng-bind="pageTitle"></title>
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+    <% }); %>
     <link rel="stylesheet" href="assets/css/app.css"/>
 
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+    <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
     <script type="text/javascript" src="assets/js/app.js"></script>
 </head>
 <body>
 <div class="row full">
     <div id="sidebar" class="left">
         <div id="logo" class="text-center">
-            <a href="index.html">
+            <a ng-href="#/">
                 <img ng-src="assets/image/logo.png" width="45" height="45" alt="logo">
             </a>
         </div>
-        <ul class="navigation">
-            <li class="item  clearfix">
-                <img alt="About" class="left" src="assets/image/about-small.png">
-                <span class="show-for-large-up"><strong>About</strong><br/>Info about me</span>
-            </li>
-            <li class="item clearfix">
-                <img alt="Portfolio" class="left" src="assets/image/portfolio-small.png">
-                <span class="show-for-large-up"><strong>Portfolio</strong><br/>See what I've done</span>
-            </li>
-            <li class="item clearfix">
-                <img alt="Contacts" class="left" src="assets/image/contact-small.png">
-                <span class="show-for-large-up"><strong>Contacts</strong><br/>How to get in touch</span>
-            </li>
-        </ul>
+        <div data-ui-view="navigation"></div>
     </div>
 
-    <div id="content" ui-view="main">
-
-    </div>
+    <div data-ui-view="main" class="slide"></div>
 
 </div>
-<script ng-src="http://localhost:35729/livereload.js"></script>
+<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

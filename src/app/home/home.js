@@ -2,12 +2,11 @@ var app = angular.module( 'egils.portfolio.home', [
     'ui.router'
 ]);
 
-
 app.config(["$stateProvider", function ( $stateProvider ) {
-    $stateProvider.state( 'home', {
+    $stateProvider.state( 'root.home', {
         url: '/',
         views: {
-            "main": {
+            "main@": {
                 controller: 'HomeController',
                 templateUrl: 'home/home.tpl.html'
             }
