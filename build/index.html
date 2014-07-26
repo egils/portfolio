@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="egils.portfolio" ng-controller="AppController">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,6 +15,8 @@
     <script type="text/javascript" src="vendor/foundation/js/foundation.min.js"></script>
     <script type="text/javascript" src="vendor/angular/angular.js"></script>
     <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/home/home.js"></script>
     <script type="text/javascript" src="templates-common.js"></script>
     <script type="text/javascript" src="templates-app.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
@@ -43,37 +45,11 @@
         </ul>
     </div>
 
-    <div id="content">
-        <section id="home">
-            <div class="row collapse">
-                <div class="small-12 medium-4 columns ico-link">
-                    <!--<img alt="About" data-interchange="[assets/image/about.png, (default)], [assets/image/about-retina.png, (retina)]">-->
-                    <img alt="About" src="assets/image/about.png">
-                    <noscript><img src="assets/image/about.png"></noscript>
-                    <br>
-                    About
-                </div>
+    <div id="content" ui-view="main">
 
-                <div class="small-12 medium-4 columns ico-link">
-                    <!--<img alt="Portfolio" data-interchange="[assets/image/portfolio.png, (default)], [assets/image/portfolio-retina.png, (retina)]"> <noscript><img src="assets/image/portfolio.png"></noscript>-->
-
-                    <img alt="Portfolio" src="assets/image/portfolio.png">
-                    <noscript><img src="assets/image/portfolio.png"></noscript>
-                    <br>
-                    Portfolio
-                </div>
-
-                <div class="small-12 medium-4 columns last ico-link">
-                    <!--<img alt="Contacts" data-interchange="[assets/image/contact.png, (default)], [assets/image/contact-retina.png, (retina)]"> <noscript><img src="assets/image/contact.png"></noscript>-->
-                    <img alt="Contacts" src="assets/image/contact.png"> <noscript><img src="assets/image/contact.png"></noscript>
-                    <br>
-                    Contacts
-                </div>
-            </div>
-        </section>
     </div>
 
 </div>
-
+<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>
