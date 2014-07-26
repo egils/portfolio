@@ -13,7 +13,7 @@ app.run(function run() {
 
 });
 
-app.controller('AppController', ["$scope", "$location", function ($scope, $location) {
+app.controller('AppController', ["$scope", function ($scope) {
     $scope.$on('$stateChangeSuccess', function (event, toState) {
         if (angular.isDefined(toState.data.pageTitle)) {
             $scope.pageTitle = toState.data.pageTitle + ' | Egils portfolio';

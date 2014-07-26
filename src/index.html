@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Egils Portfolio</title>
+    <title ng-bind="pageTitle"></title>
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -18,7 +18,7 @@
     <div id="sidebar" class="left">
         <div id="logo" class="text-center">
             <a href="index.html">
-                <img src="assets/image/logo.png" width="45" height="45"/>
+                <img ng-src="assets/image/logo.png" width="45" height="45" alt="logo">
             </a>
         </div>
         <ul class="navigation">
@@ -42,6 +42,6 @@
     </div>
 
 </div>
-<script src="http://localhost:35729/livereload.js"></script>
+<script ng-src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>
