@@ -12,16 +12,8 @@ $font-secondary-color: #ffffff;
 }
 
 #content {
-  background-image: url('../image/Depositphotos_2389611_original.jpg');
   height: 100%;
   max-height: 100%;
-  background-origin: padding-box;
-  background-position: center bottom !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   right: 0;
   top: 0;
@@ -29,23 +21,41 @@ $font-secondary-color: #ffffff;
   overflow-y: scroll;
   overflow-x: hidden;
 
-  section {
-    text-align: center;
-    width: 100%;
+  #home {
+    background-image: url('../image/Depositphotos_2389611_original.jpg');
+    background-origin: padding-box;
+    background-position: center bottom !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    max-height: 100%;
 
-    &#home {
+    section {
+      text-align: center;
+      width: 100%;
       color: $font-secondary-color;
+
       div.row {
         left: 50%;
         max-width: 1200px !important;
         position: relative;
-        ransform: translateX(-50%);
+        transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         -moz-transform: translateX(-50%);
         -o-transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
 
         font-size: rem-calc(26);
+
+        a {
+          color: $font-secondary-color;
+          &:hover {
+            font-weight: bold;
+          }
+        }
 
         .ico-link {
           min-width: rem-calc(210);
@@ -70,6 +80,28 @@ $font-secondary-color: #ffffff;
         }
       }
     }
+  }
+
+  #about {
+    height: 100%;
+    max-height: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    overflow-y: scroll;
+  }
+
+  #portfolio {
+    height: 100%;
+    max-height: 100%;
+    background-color: #ffffff;
+    overflow-y: scroll;
+  }
+
+  #contacts {
+    height: 100%;
+    max-height: 100%;
+    background-color: #ffffff;
+    overflow-y: scroll;
   }
 }
 
@@ -111,11 +143,12 @@ $font-secondary-color: #ffffff;
 
       a {
         display: block;
-      }
+        color: $body-font-color;
 
-      strong {
-        font-size: rem-calc(16);
-        color: $font-secondary-color;
+        strong {
+          font-size: rem-calc(16);
+          color: $font-secondary-color;
+        }
       }
 
       img {
@@ -140,7 +173,7 @@ $font-secondary-color: #ffffff;
 }
 
 @media #{$medium-up} {
-  section#home {
+  #home section {
     transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -168,8 +201,6 @@ $font-secondary-color: #ffffff;
   #content {
     left: $sidebar-width;
   }
-
-  color: green !important;
 }
 
 @media only screen and (max-height: 23.125em) {
@@ -178,24 +209,24 @@ $font-secondary-color: #ffffff;
   }
 }
 
-//.slide.ng-leave {
-//  position: relative;
-//}
-//.slide.ng-enter {
-//  position: absolute;
-//}
-//.slide.ng-enter, .slide.ng-leave {
-//  -webkit-transition: -webkit-transform 0.3s ease-in, opacity 0.3s ease-in;
-//  -moz-transition: -moz-transform 0.3s ease-in, opacity 0.3s ease-in;
-//  -o-transition: -o-transform 0.3s ease-in, opacity 0.3s ease-in;
-//  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-//}
-//.slide.ng-enter, .slide.ng-leave.ng-leave-active {
-//  -webkit-transform: scaleX(0.0001);
-//  -o-transform: scaleX(0.0001);
-//  transform: scaleX(0.0001);
-//  opacity: 0;
-//}
+.slide.ng-leave {
+  position: relative;
+}
+.slide.ng-enter {
+  position: absolute;
+}
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition: -webkit-transform 0.3s ease-in, opacity 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in, opacity 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in, opacity 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+.slide.ng-enter, .slide.ng-leave.ng-leave-active {
+  -webkit-transform: scaleX(0.0001);
+  -o-transform: scaleX(0.0001);
+  transform: scaleX(0.0001);
+  opacity: 0;
+}
 //.slide, .slide.ng-enter.ng-enter-active {
 //  -webkit-transform: scaleX(1);
 //  -o-transform: scaleX(1);
