@@ -8,7 +8,6 @@
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
-    <link rel="stylesheet" href="assets/css/app.css"/>
 
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>
@@ -29,6 +28,6 @@
     <div data-ui-view="main" id="content" class="slide"></div>
 
 </div>
-<script src="http://192.168.1.200:35729/html/livereload.js"></script>
+<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

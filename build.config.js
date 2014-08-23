@@ -69,7 +69,6 @@ module.exports = {
             'vendor/angular-animate/angular-animate.js'
         ],
         css: [
-            'css/app.css'
         ],
         assets: [
         ]

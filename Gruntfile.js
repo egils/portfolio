@@ -11,7 +11,8 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-coffee');
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-conventional-changelog');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-coffeelint');
@@ -86,10 +87,10 @@ module.exports = function ( grunt ) {
         /**
          * The directories to delete when `grunt clean` is executed.
          */
-        clean: [
-            '<%= build_dir %>',
-            '<%= compile_dir %>'
-        ],
+        clean: {
+            build: '<%= build_dir %>',
+            compile: '<%= compile_dir %>'
+        },
 
         /**
          * The `copy` task just copies files from A to B. We use it here to copy
@@ -160,7 +161,7 @@ module.exports = function ( grunt ) {
              */
             build_css: {
                 src: [
-                    '<%= vendor_files.css %>',
+                    'src/styles/css/app.css',
                     '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
                 ],
                 dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
@@ -182,6 +183,20 @@ module.exports = function ( grunt ) {
                     'module.suffix'
                 ],
                 dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
+            }
+        },
+
+        /**
+         * Minify css.
+         */
+        cssmin: {
+            combine: {
+                options: {
+                    noAdvanced: true
+                },
+                files: {
+                    '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': ['<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css']
+                }
             }
         },
 
@@ -236,15 +251,13 @@ module.exports = function ( grunt ) {
             }
         },
 
-        /**
-         * `grunt-contrib-compass` handles our LESS compilation and uglification automatically.
-         * Only our `main.less` file is included in compilation; all other files
-         * must be imported from this file.
-         */
-        compass: {                  // Task
-            dist: {                   // Target
-                options: {              // Target options
-                    config: 'config/config.rb'
+        sass: {
+            options: {
+                includePaths: ['vendor/foundation/scss']
+            },
+            dist: {
+                files: {
+                    'src/styles/css/app.css': 'src/styles/scss/app.scss'
                 }
             }
         },
@@ -454,9 +467,9 @@ module.exports = function ( grunt ) {
             /**
              * When the CSS files change, we need to compile and minify them.
              */
-            compass: {
+            sass: {
                 files: [ 'src/**/*.scss' ],
-                tasks: [ 'compass:dist' ]
+                tasks: [ 'sass:dist' ]
             },
 
             /**
@@ -496,8 +509,8 @@ module.exports = function ( grunt ) {
      * The `build` task gets your app ready to run for development and testing.
      */
     grunt.registerTask( 'build', [
-        'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'compass:dist',
-        'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
+        'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'sass:dist',
+        'copy:build_app_assets', 'copy:build_vendor_assets', 'concat:build_css',
         'copy:build_appjs', 'copy:build_vendorjs', 'index:build'
     ]);
 
@@ -506,7 +519,8 @@ module.exports = function ( grunt ) {
      * minifying your code.
      */
     grunt.registerTask( 'compile', [
-        'compass:dist', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+        'clean:compile', 'sass:dist', 'copy:compile_assets', 'ngmin', 'concat:compile_js',
+        'concat:build_css', 'cssmin', 'uglify', 'index:compile'
     ]);
 
     /**
