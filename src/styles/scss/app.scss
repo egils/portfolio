@@ -11,6 +11,10 @@ $font-secondary-color: #ffffff;
   max-height: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #content {
   height: 100%;
   max-height: 100%;
@@ -18,7 +22,7 @@ $font-secondary-color: #ffffff;
   right: 0;
   top: 0;
   left: $sidebar-small-width;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   #home {
@@ -87,21 +91,21 @@ $font-secondary-color: #ffffff;
     max-height: 100%;
     background-color: #ffffff;
     color: #000000;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #portfolio {
     height: 100%;
     max-height: 100%;
     background-color: #ffffff;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   #contacts {
     height: 100%;
     max-height: 100%;
     background-color: #ffffff;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 
@@ -113,6 +117,7 @@ $font-secondary-color: #ffffff;
   background: $body-bg;
   height: 100%;
   max-height: 100%;
+  z-index: 10;
 
   #logo {
     padding: rem-calc(45) 0 0;
@@ -209,27 +214,59 @@ $font-secondary-color: #ffffff;
   }
 }
 
-.slide.ng-leave {
-  position: relative;
-}
-.slide.ng-enter {
+.at-view-slide-in-left.ng-enter {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transform: translate(-100%, 0px);
+  -moz-transform: translate(-100%, 0px);
+  -ms-transform: translate(-100%, 0px);
+  -o-transform: translate(-100%, 0px);
+  transform: translate(-100%, 0px);
+  opacity: 0;
+  z-index: 1;
   position: absolute;
 }
-.slide.ng-enter, .slide.ng-leave {
-  -webkit-transition: -webkit-transform 0.3s ease-in, opacity 0.3s ease-in;
-  -moz-transition: -moz-transform 0.3s ease-in, opacity 0.3s ease-in;
-  -o-transition: -o-transform 0.3s ease-in, opacity 0.3s ease-in;
-  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+
+.at-view-slide-in-left.ng-enter-active {
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+  position: absolute;
 }
-.slide.ng-enter, .slide.ng-leave.ng-leave-active {
-  -webkit-transform: scaleX(0.0001);
-  -o-transform: scaleX(0.0001);
-  transform: scaleX(0.0001);
+
+.at-view-slide-out-right.ng-leave {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+  z-index: 3;
+  position: absolute;
+}
+
+.at-view-slide-out-right.ng-leave-active {
+  -webkit-transform: translate(100%, 0px);
+  -moz-transform: translate(100%, 0px);
+  -ms-transform: translate(100%, 0px);
+  -o-transform: translate(100%, 0px);
+  transform: translate(100%, 0px);
   opacity: 0;
 }
-//.slide, .slide.ng-enter.ng-enter-active {
-//  -webkit-transform: scaleX(1);
-//  -o-transform: scaleX(1);
-//  transform: scaleX(1);
-//  opacity: 1;
-//}

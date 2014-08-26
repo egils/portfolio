@@ -469,7 +469,7 @@ module.exports = function ( grunt ) {
              */
             sass: {
                 files: [ 'src/**/*.scss' ],
-                tasks: [ 'sass:dist' ]
+                tasks: [ 'sass:dist', 'concat:build_css' ]
             },
 
             /**
